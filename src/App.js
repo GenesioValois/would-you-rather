@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Container from "@material-ui/core/Container";
+import { Router, Route, Switch } from "react-router-dom";
 import { handleInitialData } from "./store/actions/shared";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import LoadingBar from "./components/LoadingBar";
+import Layout from "./components/Layout";
+import history from "./utils/browserHistory";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,14 +17,15 @@ function App() {
   }, []);
 
   return (
-    <Container fixed>
-      <LoadingBar />
-      <Router>
+    <Router history={history}>
+      <Layout>
+        <LoadingBar />
         <Switch>
           <Route path="/" exact component={isSignedIn ? Home : Login} />
+          <Route path="/home" exact component={Home} />
         </Switch>
-      </Router>
-    </Container>
+      </Layout>
+    </Router>
   );
 }
 
