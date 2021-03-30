@@ -52,7 +52,7 @@ const QuestionDetail = ({ match }) => {
             className={classes.container}
           >
             <Avatar alt={author.name} src={author.avatarURL} className={classes.avatar} />
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
+            <Typography className={classes.title} color="textSecondary">
               {author.name} asks:
             </Typography>
           </Grid>
