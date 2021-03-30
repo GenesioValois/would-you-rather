@@ -4,9 +4,11 @@ import { Router, Route, Switch } from "react-router-dom";
 import { handleInitialData } from "./store/actions/shared";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import QuestionDetail from "./pages/questionDetail";
 import LoadingBar from "./components/LoadingBar";
 import Layout from "./components/Layout";
 import history from "./utils/browserHistory";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +24,8 @@ function App() {
         <LoadingBar />
         <Switch>
           <Route path="/" exact component={isSignedIn ? Home : Login} />
-          <Route path="/home" exact component={Home} />
+          <PrivateRoute path="/home" exact comp={Home} />
+          <PrivateRoute path="/question/:id" exact comp={QuestionDetail} />
         </Switch>
       </Layout>
     </Router>

@@ -4,7 +4,6 @@ export const SIGN_OUT = "SIGN_OUT";
 
 export function signIn(id) {
   localStorage.setItem("user_id", id);
-  history.push("/home");
   return {
     type: SIGN_IN,
     id,
