@@ -10,6 +10,7 @@ import Layout from "./components/Layout";
 import history from "./utils/browserHistory";
 import PrivateRoute from "./components/PrivateRoute";
 import AddQuestion from "./pages/addQuestion";
+import Leaderboard from "./pages/leaderboard";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function App() {
           <PrivateRoute path="/home" exact comp={Home} />
           <PrivateRoute path="/question/:id" exact comp={QuestionDetail} />
           <PrivateRoute path="/add" exact comp={AddQuestion} />
+          <PrivateRoute path="/leaderboard" exact comp={Leaderboard} />
         </Switch>
       </Layout>
     </Router>
