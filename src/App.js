@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     dispatch(handleInitialData());
-  }, []);
+  });
 
   return (
     <Router history={history}>
