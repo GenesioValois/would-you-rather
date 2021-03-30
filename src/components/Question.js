@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     width: 400,
-    margin: 18,
+    margin: 16,
   },
   container: {
     paddingBottom: 8,
@@ -29,8 +29,8 @@ const useStyles = makeStyles({
   },
   avatar: { marginRight: 12 },
   question: {
-    marginBottom: 18,
-    marginTop: 18,
+    marginBottom: 16,
+    marginTop: 16,
   },
   link: { color: "inherit", textDecoration: "inherit" },
 });
