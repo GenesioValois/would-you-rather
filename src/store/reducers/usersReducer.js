@@ -1,5 +1,5 @@
 import { SET_USERS } from "../actions/user";
-import { ADD_ANSWER } from "../actions/question";
+import { ADD_ANSWER, ADD_QUESTION } from "../actions/question";
 
 export default function usersReducer(state = {}, action) {
   switch (action.type) {
@@ -19,6 +19,15 @@ export default function usersReducer(state = {}, action) {
             ...state[user_id].answers,
             [question_id]: answer,
           },
+        },
+      };
+    case ADD_QUESTION:
+      const questions = state[action.question.author].questions.concat([action.question.id]);
+      return {
+        ...state,
+        [action.question.author]: {
+          ...state[action.question.author],
+          questions,
         },
       };
     default:
