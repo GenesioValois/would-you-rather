@@ -25,6 +25,8 @@ import RightSection from "./RightSection";
 
 const drawerWidth = 240;
 
+// most of material ui code here is avaliabel at:
+// https://material-ui.com/components/drawers/#mini-variant-drawer
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
