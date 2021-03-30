@@ -17,16 +17,10 @@ const useStyles = makeStyles({
   container: {
     paddingBottom: 8,
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
   title: {
     fontSize: 14,
   },
   avatar: { marginRight: 12 },
-  link: { color: "inherit", textDecoration: "inherit" },
 });
 
 const QuestionDetail = ({ match }) => {

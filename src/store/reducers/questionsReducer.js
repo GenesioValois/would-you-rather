@@ -1,4 +1,4 @@
-import { ADD_ANSWER, SET_QUESTIONS } from "../actions/question";
+import { ADD_ANSWER, SET_QUESTIONS, ADD_QUESTION } from "../actions/question";
 
 export default function questionsReducer(state = {}, action) {
   switch (action.type) {
@@ -20,6 +20,11 @@ export default function questionsReducer(state = {}, action) {
             votes,
           },
         },
+      };
+    case ADD_QUESTION:
+      return {
+        ...state,
+        [action.question.id]: action.question,
       };
     default:
       return state;

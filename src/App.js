@@ -9,6 +9,7 @@ import LoadingBar from "./components/LoadingBar";
 import Layout from "./components/Layout";
 import history from "./utils/browserHistory";
 import PrivateRoute from "./components/PrivateRoute";
+import AddQuestion from "./pages/addQuestion";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" exact component={isSignedIn ? Home : Login} />
           <PrivateRoute path="/home" exact comp={Home} />
           <PrivateRoute path="/question/:id" exact comp={QuestionDetail} />
+          <PrivateRoute path="/add" exact comp={AddQuestion} />
         </Switch>
       </Layout>
     </Router>
